@@ -1,10 +1,12 @@
 package base;
 
+// Isaac Chouri 
+
 public class MyInteger {
 
 	private int iValue;
-	private int z;
 
+	// Constructor and Getter
 	public MyInteger(int iValue) {
 		super();
 		this.iValue = iValue;
@@ -12,70 +14,66 @@ public class MyInteger {
 
 	public int getiValue() {
 		return iValue;
-	}
+	} 
 
-	public boolean isEven() {
-		if (this.iValue % 2 == 0) {
+	// Methods that use Int
+	public static boolean isEven(int x) {
+		if (x % 2 == 0) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public boolean isOdd() {
-		if (this.iValue % 2 == 1) {
+	public static boolean isOdd(int x) {
+		if (x % 2 == 1) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	boolean isPrime() {
-		for (int x = 2; x < this.iValue; x++) {
-			if (this.iValue % x == 0)
+	public static boolean isPrime(int x) {
+		for (int y = 2; y < x; y++) {
+			if (x % y == 0)
 				return false;
 		}
 		return true;
 	}
 
-	public static boolean isEven(int y) {
-		return isEven(y);
+	public boolean equals(int x) {
+		return (iValue == x);
 	}
 
-	public static boolean isOdd(int y) {
-		return isOdd(y);
+	// Methods that use iValue
+	public boolean isEven() {
+		return isEven(iValue);
 	}
 
-	public static boolean isPrime(int y) {
-		return isPrime(y);
+	public boolean isOdd() {
+		return isOdd(iValue);
 	}
 
-	public static boolean isEven(MyInteger y) {
-		return isEven(y);
+	public boolean isPrime() {
+		return isPrime(iValue);
+	} 
+
+	// Methods that use Constructor MyInteger
+
+	public static boolean isEven(MyInteger x) {
+		return x.isEven();
 	}
 
-	public static boolean isOdd(MyInteger y) {
-		return isOdd(y);
+	public static boolean isOdd(MyInteger x) {
+		return x.isOdd();
 	}
 
-	public static boolean isPrime(MyInteger y) {
-		return isPrime(y);
+	public static boolean isPrime(MyInteger x) {
+		return x.isPrime();
 	}
 
-	boolean equals(int y) {
-		if (y == z) {
-			return true;
-		} else {
-			return false;
-		}
+	public boolean equals(MyInteger x) {
+		return equals(x.getiValue());
 	}
-/**
-	boolean equals(MyInteger y) {
-		if (MyInteger.class == z) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	*/
+
 }
